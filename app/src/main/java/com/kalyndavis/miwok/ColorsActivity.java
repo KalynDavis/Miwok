@@ -3,11 +3,11 @@ package com.kalyndavis.miwok;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Phrases extends AppCompatActivity {
+public class ColorsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phrases);
+        setContentView(R.layout.activity_colors);
     }
 }
