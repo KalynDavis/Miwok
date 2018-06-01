@@ -2,28 +2,41 @@ package com.kalyndavis.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
 
-    String[] words;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numbers);
+        setContentView(R.layout.list_view);
 
-        String[] wordArray = new String[]{"one", "two","three","four","five","six","seven","eight","nine","ten"};
 
-        ArrayList<String> words = new ArrayList<String>();
+        ArrayList<Word> words = new ArrayList<>();
 
-        for(int i = 0; i <=wordArray.length-1;  i++){
-            words.add(wordArray[i]);
-        }
+        words.add(new Word("lutti","one"));
+        words.add(new Word("otiiko","two"));
+        words.add(new Word("tolookosu","three"));
+        words.add(new Word("oyyisa","four"));
+        words.add(new Word("massokka","five"));
+        words.add(new Word("temmokka","six"));
+        words.add(new Word("kenekaku","seven"));
+        words.add(new Word("kawinta","eight"));
+        words.add(new Word("wo'e","nine"));
+        words.add(new Word("na'aacha","ten"));
 
-        Log.v("NumbersActivity", "word at index 9: "+words.get(9));
+
+        WordAdapter adapter = new WordAdapter(this, words);
+
+        ListView listView = findViewById(R.id.list);
+
+        listView.setAdapter(adapter);
+
+
+
 
 
     }
